@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap");
+
+.infoyears-block {
+  display: grid;
+  font-size: 16px;
+  grid-template-columns: 0.3fr 1fr;
+  font-family: "Inter", sans-serif;
+}
+
+.first-block {
+  margin: 0 auto;
+}
+
+.info-block__header {
+  padding: 8px;
+  font-weight: 600;
+}
+
+.info-block__content {
+  padding: 8px;
+}
+
+.years-state {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.days-state {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

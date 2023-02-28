@@ -1,0 +1,8 @@
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+.overview-container {
+  background-color: yellow;
+  display: grid;
+  grid-template-rows: 1.8fr 1fr;
+  height: 100vh;
+}

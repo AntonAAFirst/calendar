@@ -1,0 +1,45 @@
+.thisyear-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* //////////////////////////////////////////////////////////////////// */
+
+.months {
+  margin-top: 100px;
+  width: 100%;
+  height: max-content;
+}
+
+.month {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  margin: 0 auto;
+  font-size: 11px;
+}
+
+.month-name {
+  width: 50px;
+  padding: 4px;
+  text-align: center;
+}
+
+.month-days {
+  padding: 4px;
+  display: grid;
+  width: 500px;
+  grid-template-columns: repeat(31, 1fr);
+}
+
+.month-days-day {
+  margin: 0 6px;
+}
+
+.past-day {
+  color: red;
+}
+
+/* //////////////////////////////////////////////////////////////////// */

@@ -1,0 +1,63 @@
+@import "~@flaticon/flaticon-uicons/css/all/all";
+
+.decade-block {
+  margin: 10px;
+  display: grid;
+  height: max-content;
+  grid-template-columns: 80px max-content;
+}
+
+.decade-block-age {
+  margin: auto auto;
+  text-align: center;
+  height: max-content;
+  font-family: "Inter", sans-serif;
+  font-size: 16 px;
+}
+
+.decade {
+  width: max-content;
+  display: grid;
+  height: max-content;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.years-block {
+  display: grid;
+  height: max-content;
+  grid-template-rows: 1fr 1fr;
+}
+
+.one-year {
+  margin: 0 4px;
+  width: max-content;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.one-year__season {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.one-year__month {
+  display: grid;
+  margin: 2px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.one-year__week {
+  margin: 0;
+  width: max-content;
+  font-size: 8px;
+  padding: 0;
+}
+
+.one-year__week:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.isPastDays {
+  color: rgba(0, 0, 0, 0.3);
+}
