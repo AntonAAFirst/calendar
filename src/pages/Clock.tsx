@@ -68,21 +68,8 @@ export default function Clock() {
 
   const [insultText, setInsultText] = useState<string>("base");
 
-  // async function getFunc() {
-
-  // }
-
   useEffect(() => {
-    // getFunc();
-
-    fetch("http://evilinsult.com/generate_insult.php?lang=en&type=json", {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "API-Key": "secret",
-      },
-    }).then((response) => console.log(response));
-    // getInsult().then((response) => console.log(response));
+    getInsult().then((data) => console.log(data));
   }, []);
 
   return (
