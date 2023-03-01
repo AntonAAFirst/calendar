@@ -17,7 +17,7 @@ export default function Layout() {
   }
 
   useEffect(() => {
-    setTriviaFacts();
+    // setTriviaFacts();
   }, []);
 
   return (
