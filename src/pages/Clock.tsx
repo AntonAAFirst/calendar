@@ -1,10 +1,10 @@
-import axios from "axios";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { useState, useEffect } from "react";
 import { months } from "../shared/helpers/thisyear";
-import { getInsult } from "../shared/http/insultApi";
 
 import "../shared/styles/clock/clock.css";
 import AnalogClock from "../widgets/Clock/AnalogClock";
+import BackgroundColor from "../widgets/Clock/BackgroundColor";
+import ClockInfoBlock from "../widgets/Clock/infoblock/ClockInfoBlock";
 
 export default function Clock() {
   const currentYear = new Date().getUTCFullYear();
@@ -66,31 +66,41 @@ export default function Clock() {
     months[new Date().getUTCMonth()].countDays.length
   }`;
 
-  const [insultText, setInsultText] = useState<string>("base");
-
   useEffect(() => {
-    getInsult().then((data) => console.log(data));
-  }, []);
+    setTimeout(() => {
+      setSeconds(new Date().getSeconds());
+
+      const myString = `${getSpaces(seconds)} 2018 2019 2020 2021 2022 2023`;
+      setSecondsString(myString);
+    }, 1000);
+  });
+
+  function getSpaces(countSpaces: number): string {
+    let spaces = "";
+    for (let i = 0; i < countSpaces; i++) {
+      spaces += ".";
+    }
+
+    return spaces;
+  }
+
+  const [seconds, setSeconds] = useState<number>(new Date().getSeconds());
+
+  const [secondString, setSecondsString] = useState<string>("");
 
   return (
     <div className="clock-container">
-      <div className="color-part">
-        <div className="black-part"></div>
-        <div className="white-part"></div>
-      </div>
-
+      <BackgroundColor />
       <div className="clock-content">
-        <div className="clock-info-block">
-          <div className="time-lived">here will be time which you lived</div>
-          <div> {insultText}</div>
-        </div>
+        <ClockInfoBlock />
 
-        <div className="clock-days-block">
+        <div style={{ fontSize: "44px" }}>{secondString}</div>
+        {/* <div className="clock-days-block">
           <div className="days-block">{daysBlockString}</div>
           <div className="clock-block">
             <AnalogClock />
           </div>
-        </div>
+        </div> */}
 
         <div className="clock-lines">
           <div className="months-line">

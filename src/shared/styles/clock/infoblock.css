@@ -1,0 +1,26 @@
+.clock-info-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.lived-time {
+  margin-top: 24px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: right;
+  font-size: 14px;
+}
+
+.lived-time-container {
+  width: max-content;
+  margin-right: 0;
+  padding-right: 80px;
+}
+
+.lived-time__header {
+  color: white;
+}
+
+.lived-time__age-string {
+  color: silver;
+}

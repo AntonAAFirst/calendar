@@ -8,6 +8,7 @@ export default function AnalogClock() {
   const hourHand: any = useRef();
 
   const [rerenderState, setRerenderState] = useState<number>(1);
+
   function setDate() {
     const now = new Date();
 

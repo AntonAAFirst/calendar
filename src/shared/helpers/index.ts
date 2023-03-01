@@ -10,9 +10,9 @@ export function getBirthData(data: string): string {
   }
 }
 
-const yearOfBirth: string = getBirthData("year");
-const monthOfBirth: string = getBirthData("month");
-const dayOfBirth: string = getBirthData("day");
+export const yearOfBirth: string = getBirthData("year");
+export const monthOfBirth: string = getBirthData("month");
+export const dayOfBirth: string = getBirthData("day");
 
 export function getLivedYears() {
   let thisYear = 0;

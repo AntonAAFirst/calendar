@@ -1,8 +1,46 @@
 .layout {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  height: 100vh;
+  grid-template-columns: max-content 1fr;
+}
+
+.control-panel-container {
+  height: 400px;
+  display: grid;
+  margin-top: 110px;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .contol-panel {
-  background-color: black;
+  text-align: center;
+}
+
+.control-panel__item {
+  font-size: 18px;
+  margin: 22px;
+  color: grey;
+}
+
+.control-panel__item-active {
+  color: black;
+  font-size: 18px;
+  margin: 22px;
+}
+
+.control-panel__item-active-clock {
+  color: white;
+  font-size: 18px;
+  margin: 22px;
+}
+
+.overview-active {
+  background-color: #e0e000;
+}
+
+.thisyear-active {
+  background-color: #f2f2f2;
+}
+
+.clock-active {
+  background-color: #000;
 }

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import controlPanelReducer from "./controlPanelReducer";
 import overviewReducer from "./overviewReducer";
 
 const store = configureStore({
   reducer: {
     overview: overviewReducer,
+    controlPanel: controlPanelReducer,
   },
 });
 

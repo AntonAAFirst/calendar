@@ -8,7 +8,7 @@ export default function DaysState() {
     (state) => state.overview.pagesOfYourBook
   );
 
-  const dollarsBlockText: string = `If you started saving $5 a day at age 18 you would have ${allDollars}
+  const dollarsBlockText: string = `If you started saving $5 a day  you will have ${allDollars}
     by this time`;
 
   const booksBlockText = `If you finish reading 1 book a month, you will read ${booksRead} new
@@ -19,12 +19,32 @@ export default function DaysState() {
 
   return (
     <div className="days-state">
-      <InfoBlock header={"$" + allDollars.toString()} text={dollarsBlockText} />
-      <InfoBlock header={"$" + booksRead.toString()} text={booksBlockText} />
-      <InfoBlock
-        header={pagesOfYourBook.toString()}
-        text={pagesOfYourBookBlockText}
-      />
+      {allDollars ? (
+        <InfoBlock
+          header={"$" + allDollars.toString()}
+          text={dollarsBlockText}
+        />
+      ) : (
+        ""
+      )}
+
+      {booksRead ? (
+        <InfoBlock
+          header={booksRead.toString() + " books"}
+          text={booksBlockText}
+        />
+      ) : (
+        ""
+      )}
+
+      {pagesOfYourBook ? (
+        <InfoBlock
+          header={pagesOfYourBook.toString() + " pages"}
+          text={pagesOfYourBookBlockText}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
