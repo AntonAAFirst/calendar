@@ -95,12 +95,6 @@ export default function Clock() {
         <ClockInfoBlock />
 
         <div style={{ fontSize: "44px" }}>{secondString}</div>
-        {/* <div className="clock-days-block">
-          <div className="days-block">{daysBlockString}</div>
-          <div className="clock-block">
-            <AnalogClock />
-          </div>
-        </div> */}
 
         <div className="clock-lines">
           <div className="months-line">
