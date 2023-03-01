@@ -27,5 +27,3 @@ export function getLivedYears() {
   }
   return new Date().getFullYear() - parseInt(yearOfBirth) + thisYear;
 }
-
-// export function getLivedYearsByTime()
