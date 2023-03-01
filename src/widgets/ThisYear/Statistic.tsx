@@ -6,7 +6,6 @@ import {
   getPastWeeksSinceTime,
 } from "../../shared/helpers/statistic";
 import { months } from "../../shared/helpers/thisyear";
-import { getDateInfo, getYearInfo } from "../../shared/http/numbersApi";
 
 export default function Statistic() {
   const date = new Date();
@@ -33,17 +32,17 @@ export default function Statistic() {
   const [yearText, setYearText] = useState<string>("");
   const [currentDateText, setCurrentDateText] = useState<string>("");
 
-  async function getDate() {
-    await getYearInfo(2023).then(({ data }) => {
-      setYearText(data);
-    });
-    await getDateInfo(currentMonth, currentDay).then(({ data }) => {
-      setCurrentDateText(data);
-    });
-  }
+  // async function getDate() {
+  //   await getYearInfo(2023).then(({ data }) => {
+  //     setYearText(data);
+  //   });
+  //   await getDateInfo(currentMonth, currentDay).then(({ data }) => {
+  //     setCurrentDateText(data);
+  //   });
+  // }
 
   useEffect(() => {
-    getDate();
+    // getDate();
   }, []);
 
   return (

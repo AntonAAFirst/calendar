@@ -1,10 +1,7 @@
 import { getBirthData, getLivedYears } from "../../shared/helpers";
 import { getCurrentAgeText } from "../../shared/helpers/overview/overviewStatisticBlock";
-import { getTriviaInfo } from "../../shared/http/numbersApi";
 import { useAppSelector } from "../../shared/store/hooks";
-import { useEffect } from "react";
 import InfoBlock from "../../shared/UI/Overview/InfoBlock";
-import { useState } from "react";
 import { textUnderAgeStatic } from "../../shared/static";
 
 export default function YearsState() {

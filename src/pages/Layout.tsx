@@ -1,23 +1,24 @@
 import React from "react";
 import { Outlet } from "react-router";
-// import {RedirectFunction} from "react-router-dom";
 import "../shared/styles/layout.css";
 import ControlPanel from "../widgets/ControlPanel/ControlPanel";
 import { useEffect } from "react";
-import { getTriviaInfo } from "../shared/http/numbersApi";
 import { textUnderAgeStatic } from "../shared/static";
+import { getActivity } from "../shared/http/activityApi";
 
 export default function Layout() {
   async function setTriviaFacts() {
     for (let i = 0; i < 70; i++) {
-      getTriviaInfo(i).then(({ data }) => {
-        textUnderAgeStatic.push(data);
+      await getActivity().then((data) => {
+        textUnderAgeStatic.push(data.data.activity);
       });
     }
+
+    console.log(textUnderAgeStatic);
   }
 
   useEffect(() => {
-    // setTriviaFacts();
+    setTriviaFacts();
   }, []);
 
   return (

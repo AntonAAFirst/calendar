@@ -17,10 +17,10 @@ export const dayOfBirth: string = getBirthData("day");
 export function getLivedYears() {
   let thisYear = 0;
 
-  if (new Date().getUTCMonth() + 1 < parseInt(monthOfBirth)) {
+  if (new Date().getMonth() + 1 < parseInt(monthOfBirth)) {
     thisYear = -1;
   } else if (
-    new Date().getUTCMonth() + 1 === parseInt(monthOfBirth) &&
+    new Date().getMonth() + 1 === parseInt(monthOfBirth) &&
     new Date().getDate() <= parseInt(dayOfBirth)
   ) {
     thisYear = -1;

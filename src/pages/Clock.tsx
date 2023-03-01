@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { months } from "../shared/helpers/thisyear";
 
 import "../shared/styles/clock/clock.css";
-import AnalogClock from "../widgets/Clock/AnalogClock";
 import BackgroundColor from "../widgets/Clock/BackgroundColor";
 import ClockInfoBlock from "../widgets/Clock/infoblock/ClockInfoBlock";
 
