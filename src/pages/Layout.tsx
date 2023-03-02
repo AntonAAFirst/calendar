@@ -5,6 +5,7 @@ import ControlPanel from "../widgets/ControlPanel/ControlPanel";
 import { useEffect } from "react";
 import { textUnderAgeStatic } from "../shared/static";
 import { getActivity } from "../shared/http/activityApi";
+import StartPage from "./StartPage";
 
 export default function Layout() {
   async function setTriviaFacts() {

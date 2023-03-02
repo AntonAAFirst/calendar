@@ -10,7 +10,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="start" element={<StartPage />} />
+        <Route path="/" element={<StartPage />} />
         <Route path="thisyear" element={<ThisYear />} />
         <Route path="overview" element={<Overview />} />
         <Route path="clock" element={<Clock />} />

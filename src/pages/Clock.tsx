@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { months } from "../shared/helpers/thisyear";
 import { newFirstActive } from "../shared/store/controlPanelReducer";
@@ -7,6 +8,7 @@ import "../shared/styles/clock/clock.css";
 import AnalogClock from "../widgets/Clock/AnalogClock";
 import BackgroundColor from "../widgets/Clock/BackgroundColor";
 import ClockInfoBlock from "../widgets/Clock/infoblock/ClockInfoBlock";
+import StartPage from "./StartPage";
 
 export default function Clock() {
   const currentYear = new Date().getUTCFullYear();
@@ -76,6 +78,10 @@ export default function Clock() {
     new Date().getDate() < 9
       ? "0" + new Date().getDate().toString()
       : new Date().getDate().toString();
+
+  if (!Cookies.get("year")) {
+    return <StartPage />;
+  }
 
   return (
     <div className="clock-container">

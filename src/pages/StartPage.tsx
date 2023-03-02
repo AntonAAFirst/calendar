@@ -62,7 +62,7 @@ export default function StartPage() {
           arrayOptions={createYears()}
         />
 
-        <Link to="clock" onClick={setCookies} className="auth-form__button">
+        <Link to="../clock" onClick={setCookies} className="auth-form__button">
           Продолжить
         </Link>
       </div>

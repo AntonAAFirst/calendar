@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import {
   newFirstActive,
@@ -26,6 +27,12 @@ export default function ControlPanel() {
     : thirdActive
     ? "thisyear-active"
     : "";
+
+  function deleteCookies() {
+    Cookies.remove("year");
+    Cookies.remove("month");
+    Cookies.remove("day");
+  }
 
   return (
     <div className={`contol-panel ${controlPanelClassString}`}>
@@ -71,7 +78,7 @@ export default function ControlPanel() {
         >
           <i className="fi fi-sr-clock "></i>
         </Link>
-        <Link to="../">
+        <Link onClick={deleteCookies} to="../">
           <i className="fi fi-bs-sign-out-alt"></i>
         </Link>
       </div>
