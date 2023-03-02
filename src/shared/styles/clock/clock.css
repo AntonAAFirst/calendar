@@ -63,7 +63,7 @@
   width: 92.8%;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: max-content 1fr 1fr;
 }
 
 .clock-lines {
@@ -95,4 +95,20 @@
 
 .clock-block {
   width: 600px;
+}
+
+.clock-days-block {
+  /* border: 2px solid red; */
+}
+
+.days {
+  font-size: 54px;
+  margin: auto auto;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.clock-days-analog {
+  margin: auto auto;
+  margin-right: 340px;
 }

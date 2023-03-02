@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { getLivedYears, monthOfBirth } from "../../../shared/helpers";
+import { getBirthData, getLivedYears } from "../../../shared/helpers";
 
 export default function LivedTime() {
   const [livedYears, setLivedYears] = useState<number>(getLivedYears());
+  const monthOfBirth: string = getBirthData("month");
 
   const [currentMonth, setCurrentMonth] = useState<number>(
     new Date().getMonth() + 1

@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { months } from "../shared/helpers/thisyear";
 
 import "../shared/styles/clock/clock.css";
+import AnalogClock from "../widgets/Clock/AnalogClock";
 import BackgroundColor from "../widgets/Clock/BackgroundColor";
 import ClockInfoBlock from "../widgets/Clock/infoblock/ClockInfoBlock";
 
 export default function Clock() {
   const currentYear = new Date().getUTCFullYear();
-  const [currentMonth, setCurrentMonth] = useState<number>(1);
+  const [currentMonth, setCurrentMonth] = useState<number>(
+    new Date().getMonth()
+  );
 
   const years = [
     currentYear - 3,
@@ -61,31 +64,10 @@ export default function Clock() {
     return monthNames;
   }
 
-  const daysBlockString = `${new Date().getDate()} / ${
-    months[new Date().getUTCMonth()].countDays.length
-  }`;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSeconds(new Date().getSeconds());
-
-      const myString = `${getSpaces(seconds)} 2018 2019 2020 2021 2022 2023`;
-      setSecondsString(myString);
-    }, 1000);
-  });
-
-  function getSpaces(countSpaces: number): string {
-    let spaces = "";
-    for (let i = 0; i < countSpaces; i++) {
-      spaces += ".";
-    }
-
-    return spaces;
-  }
-
-  const [seconds, setSeconds] = useState<number>(new Date().getSeconds());
-
-  const [secondString, setSecondsString] = useState<string>("");
+  const currentDay: string =
+    new Date().getDate() < 9
+      ? "0" + new Date().getDate().toString()
+      : new Date().getDate().toString();
 
   return (
     <div className="clock-container">
@@ -93,7 +75,14 @@ export default function Clock() {
       <div className="clock-content">
         <ClockInfoBlock />
 
-        <div style={{ fontSize: "44px" }}>{secondString}</div>
+        <div className="clock-days-block">
+          <div className="days">
+            {currentDay}/{months[currentMonth].countDays.length}
+          </div>
+          <div className="clock-days-analog">
+            <AnalogClock />
+          </div>
+        </div>
 
         <div className="clock-lines">
           <div className="months-line">

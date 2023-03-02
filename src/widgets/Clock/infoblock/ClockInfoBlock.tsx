@@ -1,17 +1,25 @@
 import LivedTime from "./LivedTime";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../../../shared/styles/clock/infoblock.css";
-import { getInsult, InsultObject } from "../../../shared/http/insultApi";
-import axios from "axios";
+import { getActivity } from "../../../shared/http/activityApi";
+import { textUnderAgeStatic } from "../../../shared/static";
 
 export default function ClockInfoBlock() {
-  const [insultText, setInsultText] = useState<string>("");
+  const [activityText, setActivityText] = useState<string>("sd");
+
+  function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+  }
+
+  useEffect(() => {
+    setActivityText(textUnderAgeStatic[getRandomInt(65)]);
+  }, []);
 
   return (
     <div className="clock-info-block">
       <LivedTime />
-      <div>{insultText}</div>
+      <div className="clock-info-block__text">{activityText}</div>
     </div>
   );
 }

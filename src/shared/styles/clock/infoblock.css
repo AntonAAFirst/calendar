@@ -24,3 +24,11 @@
 .lived-time__age-string {
   color: silver;
 }
+
+.clock-info-block__text {
+  margin-top: 24px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  color: black;
+  font-size: 18px;
+}

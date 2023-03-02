@@ -13,8 +13,6 @@ export default function Layout() {
         textUnderAgeStatic.push(data.data.activity);
       });
     }
-
-    console.log(textUnderAgeStatic);
   }
 
   useEffect(() => {

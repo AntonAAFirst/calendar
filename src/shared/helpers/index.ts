@@ -10,20 +10,24 @@ export function getBirthData(data: string): string {
   }
 }
 
-export const yearOfBirth: string = getBirthData("year");
-export const monthOfBirth: string = getBirthData("month");
-export const dayOfBirth: string = getBirthData("day");
+const currentMonth = new Date().getMonth();
+const currentDay = new Date().getDate();
+const currentYear = new Date().getFullYear();
 
 export function getLivedYears() {
+  const yearOfBirth: string = getBirthData("year");
+  const monthOfBirth: string = getBirthData("month");
+  const dayOfBirth: string = getBirthData("day");
+
   let thisYear = 0;
 
-  if (new Date().getMonth() + 1 < parseInt(monthOfBirth)) {
+  if (currentMonth + 1 < parseInt(monthOfBirth)) {
     thisYear = -1;
   } else if (
-    new Date().getMonth() + 1 === parseInt(monthOfBirth) &&
-    new Date().getDate() <= parseInt(dayOfBirth)
+    currentMonth + 1 === parseInt(monthOfBirth) &&
+    currentDay <= parseInt(dayOfBirth)
   ) {
     thisYear = -1;
   }
-  return new Date().getFullYear() - parseInt(yearOfBirth) + thisYear;
+  return currentYear - parseInt(yearOfBirth) + thisYear;
 }

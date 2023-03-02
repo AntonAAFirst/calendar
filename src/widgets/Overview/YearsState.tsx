@@ -10,6 +10,8 @@ export default function YearsState() {
   const currentYear = currentAge + parseInt(getBirthData("year"));
   const yearsDifference = currentAge - getLivedYears();
 
+  const randomText = useAppSelector((state) => state.overview.randomText);
+
   return (
     <div className="years-state">
       <InfoBlock

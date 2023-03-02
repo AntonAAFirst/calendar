@@ -43,14 +43,14 @@ export default function OneYear({ year }: LocalProps) {
             <div className="one-year__month">
               {month.map((week) => (
                 <i
-                  onMouseEnter={() =>
+                  onMouseEnter={() => {
                     dispatchAllData(
                       year.number,
                       year.seasons.indexOf(season),
                       season.indexOf(month),
                       week
-                    )
-                  }
+                    );
+                  }}
                   className={
                     isPastDays(
                       year.seasons.indexOf(season) * 3 +

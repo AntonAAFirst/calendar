@@ -6,6 +6,7 @@ interface LocalState {
   allDollars: number;
   booksRead: number;
   pagesOfYourBook: number;
+  randomText: string;
 }
 
 const initialState: LocalState = {
@@ -13,6 +14,7 @@ const initialState: LocalState = {
   allDollars: 0,
   booksRead: 0,
   pagesOfYourBook: 0,
+  randomText: "",
 };
 
 export const overviewSlice = createSlice({
@@ -31,10 +33,18 @@ export const overviewSlice = createSlice({
     newPagesOfYourBook: function (state, action: PayloadAction<number>) {
       state.pagesOfYourBook = action.payload;
     },
+    newRandomText: function (state, action: PayloadAction<string>) {
+      state.randomText = action.payload;
+    },
   },
 });
 
-export const { newCurrentAge, newAllDolars, newBooksRead, newPagesOfYourBook } =
-  overviewSlice.actions;
+export const {
+  newCurrentAge,
+  newAllDolars,
+  newBooksRead,
+  newPagesOfYourBook,
+  newRandomText,
+} = overviewSlice.actions;
 
 export default overviewSlice.reducer;

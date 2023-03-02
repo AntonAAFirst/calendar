@@ -52,16 +52,17 @@ export const decadeRows: DecadeBlock[] = [
   { age: "50-59", numbers: getTenYears(50, 59) },
   { age: "60-69", numbers: getTenYears(60, 69) },
 ];
+const currentMonth = new Date().getMonth() + 1;
+const currentDay = new Date().getDate();
 
 export function isPastDays(month: number, week: number, year: number) {
-  const currentMonth = new Date().getMonth() + 1;
-  const currentDay = new Date().getDate();
+  const livedYears = getLivedYears();
 
-  if (year > getLivedYears()) {
+  if (year > livedYears) {
     return false;
   }
 
-  if (year < getLivedYears()) {
+  if (year < livedYears) {
     return true;
   } else if (month < currentMonth) {
     return true;
