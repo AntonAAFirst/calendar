@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { factory } from "typescript";
 import {
   newFirstActive,
   newSecondActive,
@@ -71,6 +70,9 @@ export default function ControlPanel() {
           }
         >
           <i className="fi fi-sr-clock "></i>
+        </Link>
+        <Link to="../">
+          <i className="fi fi-bs-sign-out-alt"></i>
         </Link>
       </div>
     </div>

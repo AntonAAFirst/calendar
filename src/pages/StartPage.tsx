@@ -6,6 +6,7 @@ import { createArrayByCount } from "../shared/helpers/thisyear";
 import Cookies from "js-cookie";
 import { useAppDispatch } from "../shared/store/hooks";
 import { newFirstActive } from "../shared/store/controlPanelReducer";
+import Clock from "./Clock";
 
 export default function StartPage() {
   const [inputDay, setInputDay] = useState<string>("1");
@@ -33,7 +34,9 @@ export default function StartPage() {
     return years;
   }
 
-  useEffect(() => {}, []);
+  if (Cookies.get("year")) {
+    return <Clock />;
+  }
 
   return (
     <div className="startpage-container">

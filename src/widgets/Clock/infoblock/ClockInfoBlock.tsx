@@ -1,8 +1,7 @@
 import LivedTime from "./LivedTime";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import "../../../shared/styles/clock/infoblock.css";
-import { getActivity } from "../../../shared/http/activityApi";
 import { textUnderAgeStatic } from "../../../shared/static";
 
 export default function ClockInfoBlock() {

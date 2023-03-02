@@ -8,7 +8,7 @@
   height: 400px;
   display: grid;
   margin-top: 110px;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .contol-panel {

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { months } from "../shared/helpers/thisyear";
+import { newFirstActive } from "../shared/store/controlPanelReducer";
+import { useAppDispatch } from "../shared/store/hooks";
 
 import "../shared/styles/clock/clock.css";
 import AnalogClock from "../widgets/Clock/AnalogClock";
@@ -8,6 +10,8 @@ import ClockInfoBlock from "../widgets/Clock/infoblock/ClockInfoBlock";
 
 export default function Clock() {
   const currentYear = new Date().getUTCFullYear();
+
+  const dispatch = useAppDispatch();
   const [currentMonth, setCurrentMonth] = useState<number>(
     new Date().getMonth()
   );
@@ -63,6 +67,10 @@ export default function Clock() {
 
     return monthNames;
   }
+
+  useEffect(() => {
+    dispatch(newFirstActive(true));
+  }, []);
 
   const currentDay: string =
     new Date().getDate() < 9
